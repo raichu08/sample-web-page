@@ -25,6 +25,7 @@ use "npm start" and then open "http://localhost:3000" in browser.
 ------------------------------------------------------------------
 
 To run this website in ubuntu ec2, use below commands:
+
 sudo apt update
 sudo apt upgrade -y
 
