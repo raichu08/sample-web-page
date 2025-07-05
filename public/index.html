@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Greeting App</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    input {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      margin-bottom: 1rem;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: white;
+      color: #764ba2;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+    }
+
+    h2#greeting {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      color: #ffffff;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>👋 What's Your Name?</h1>
+  <input type="text" id="nameInput" placeholder="Enter your name..." />
+  <button onclick="sendName()">Greet Me</button>
+  <h2 id="greeting"></h2>
+
+  <script>
+    async function sendName() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (!name) {
+        document.getElementById('greeting').innerText = "Please enter your name!";
+        return;
+      }
+
+      const response = await fetch('/greet', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name })
+      });
+
+      const data = await response.json();
+      document.getElementById('greeting').innerText = data.message;
+    }
+  </script>
+</body>
+</html>
