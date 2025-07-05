@@ -7,6 +7,7 @@ We’ll build a web page that:
 -- Displays a personalized greeting
 
 📂 Folder Structure
+![image](https://github.com/user-attachments/assets/790892f0-d286-481d-81be-945671e1b6f8)
 
 
 📂 Pre-Req
