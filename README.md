@@ -46,3 +46,6 @@ replace localhost from your ec2 public ip
 NOTE: Make sure you have allowed access to ec2 uing port 3000 through security group.
 
 
+![image](https://github.com/user-attachments/assets/c0ed825e-ed6d-440c-b089-b44322c16bfc)
+
+
