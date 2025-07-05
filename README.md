@@ -7,12 +7,7 @@ We’ll build a web page that:
 -- Displays a personalized greeting
 
 📂 Folder Structure
-Sample-web-page/
-│
-├── server.js         # Node.js server
-├── package.json      # Dependencies
-└── public/
-    └── index.html    # Frontend page
+
 
 📂 Pre-Req
 -- nodejs
@@ -29,16 +24,16 @@ To run this website in ubuntu ec2, use below commands:
 sudo apt update
 sudo apt upgrade -y
 
--- install pre-req 
+-- install pre-req :
 sudo apt install nodejs npm -y
 
--- to verify pre-req insyalled successfuly 
+-- to verify pre-req insyalled successfuly : 
 node -v
 npm -v
 
 -- then pull the code 
 
--- go inside the project directory and then install express
+-- go inside the project directory and then install express : 
 npm install express
 
 -- use "npm start" to run the website and then open "http://localhost:3000" in browser
