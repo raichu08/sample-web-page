@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.post('/greet', (req, res) => {
   const name = req.body.name || "Guest";
-  res.json({ message: `Hello, ${name}! Welcome to our dynamic site.` });
+  res.json({ message: `Hello, ${name}! Welcome to our test project.` });
 });
 
 app.listen(PORT, () => {
